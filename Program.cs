@@ -19,7 +19,7 @@ class Program
             var b = new Author { Name = "bb bbb", Age = 22 };
             conn.Execute("INSERT INTO author (name, age) VALUES (@Name, @Age);", a);
             conn.Execute("INSERT INTO author (name, age) VALUES (@Name, @Age);", b);
-            foreach (var item in conn.Query<Author>("SELECT id AS Id, name AS Name, age AS Age from author;"))
+            foreach (var item in conn.Query<Author>("SELECT id AS Id, name AS Name, age AS Age FROM author;"))
             {
                 Console.WriteLine(item);
             }
